@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import { IMovie } from "./../types/movie";
+import { IMovie } from "../types/movie";
 import Movie from "../models/movie-model";
 
 const getMovies = async (req: Request, res: Response): Promise<void> => {

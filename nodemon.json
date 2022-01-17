@@ -1,10 +1,4 @@
 {
   "restartable": "rs",
-  "verbose": true,
-  "env": {
-    "MONGO_USER": "xxxxxxxx",
-    "MONGO_PASSWORD": "xxxxxxxx",
-    "MONGO_CLUSTER": "movie-journal",
-    "MONGO_DB": "movies"
-  }
+  "verbose": true
 }
