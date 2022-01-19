@@ -6,17 +6,23 @@ import {
   updateMovie,
   deleteMovie,
 } from "../controllers/movies-controller";
+import { registerUser, loginUser } from "../controllers/user-controller";
+import auth from "../middleware/auth";
 
 const router: Router = Router();
 
-router.get("/api/movies", getMovies);
+router.post("/register", registerUser);
 
-router.get("/api/movie/:id", getMovie);
+router.post("/login", loginUser);
 
-router.post("/api/add-movie", addMovie);
+router.get("/api/movies", auth, getMovies);
 
-router.put("/api/edit-movie/:id", updateMovie);
+router.get("/api/movie/:id", auth, getMovie);
 
-router.delete("/api/delete-movie/:id", deleteMovie);
+router.post("/api/add-movie", auth, addMovie);
+
+router.put("/api/edit-movie/:id", auth, updateMovie);
+
+router.delete("/api/delete-movie/:id", auth, deleteMovie);
 
 export default router;

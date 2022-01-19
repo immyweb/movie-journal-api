@@ -5,7 +5,7 @@ import cors from "cors";
 import morgan from "morgan";
 import config from "./config";
 import { connect } from "./utils/db";
-import movieRoutes from "./routes/routes";
+import routes from "./routes/routes";
 
 export const app: Express = express();
 
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
-app.use(movieRoutes);
+app.use(routes);
 
 export const start = async () => {
   try {

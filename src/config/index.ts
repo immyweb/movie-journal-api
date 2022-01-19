@@ -4,7 +4,7 @@ type IConfig = {
   env: string;
   isDev: boolean;
   isTest: boolean;
-  port: number;
+  port: string | undefined;
   dbUrl: string;
 };
 
@@ -12,7 +12,7 @@ const baseConfig: IConfig = {
   env,
   isDev: env === "development",
   isTest: env === "testing",
-  port: 8000,
+  port: process.env.PORT,
   dbUrl: "",
 };
 
